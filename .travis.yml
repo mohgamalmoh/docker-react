@@ -6,3 +6,4 @@ before_install:
            
 script:
         - docker run mohgamalmoh/docker-react npm run test -- --coverage
+
