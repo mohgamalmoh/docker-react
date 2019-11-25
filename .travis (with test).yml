@@ -1,4 +1,13 @@
+language: node_js
 sudo: required
+services:
+        - docker
+before_install:
+        - docker build -t mohgamalmoh/docker-react -f Dockerfile.dev .
+           
+script:
+        - docker run mohgamalmoh/docker-react npm run test
+
 deploy:
         provider: elasticbeanstalk
         region: "us-east-2"
