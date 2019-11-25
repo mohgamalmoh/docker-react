@@ -6,11 +6,14 @@ before_install:
         - docker build -t mohgamalmoh/docker-react -f Dockerfile.dev .
            
 script:
-        - docker run mohgamalmoh/docker-react npm run test -- --coverage
+        - docker run mohgamalmoh/docker-react npm run test
 
 deploy:
         provider: elasticbeanstalk
         region: "us-east-2"
         app: "docker"
         env: "Docker-env"
-        bucket_name: 
+        bucket_name: "elasticbeanstalk-us-east-2-722072946654"
+        bucket_path: "docker"
+        on:
+                branch: master
