@@ -8,3 +8,9 @@ before_install:
 script:
         - docker run mohgamalmoh/docker-react npm run test -- --coverage
 
+deploy:
+        provider: elasticbeanstalk
+        region: "us-east-2"
+        app: "docker"
+        env: "Docker-env"
+        bucket_name: 
